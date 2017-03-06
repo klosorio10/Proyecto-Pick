@@ -7,6 +7,14 @@ iframe.embed-responsive-item{
   border-radius: 10px;
 }
 
+.producto1{
+  background-color: rgb(232,100,65);
+}
+
+.producto2{
+  background-color: rgb(248,202,77);
+}
+
 input.buscador {
   width: 100%;
   color: gray;
@@ -35,6 +43,11 @@ input.comments {
   font-family: 'Roboto', sans-serif;
   align-items: center;
   text-align: center;
+}
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
 }
 
 #contacto{

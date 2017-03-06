@@ -11,7 +11,11 @@ class VideoPlayer extends Component {
           <br>
           </br>
             <div className="row"></div>
-            <div className="embed-responsive embed-responsive-16by9">
+            <div className="embed-responsive embed-responsive-16by9 col-md-5">
+              <iframe className="embed-responsive-item" src={url} ></iframe>
+            </div>
+            <div className="col-md-2"></div>
+            <div className="embed-responsive embed-responsive-16by9 col-md-5">
               <iframe className="embed-responsive-item" src={url} ></iframe>
             </div>
           </div>

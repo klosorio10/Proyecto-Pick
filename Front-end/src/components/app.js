@@ -2,12 +2,12 @@
 import React, {Component} from 'react';
 import Buscador from './buscador';
 import VideoPlayer from './VideoPlayer';
-import YTSearch from 'youtube-api-search';
-import Comentario from './comentarios/comentario';
 import Comentarios from './comentarios/comentarios';
+import Comparaciones from './productos/comparaciones';
+import YTSearch from 'youtube-api-search';
 import axios from 'axios';
 
-
+const ROOT_URL = "http://localhost:3000";
 const API_KEY = 'AIzaSyD7AeJ_fi01jWanRgPibiUCgWuSFb7nFkE';
 class App extends Component {
 
