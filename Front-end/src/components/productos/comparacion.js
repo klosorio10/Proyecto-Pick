@@ -13,7 +13,7 @@ class Comparacion extends Component {
     }
   }
 
-  render(){
+  render(){ // van a comparar solo dos productos?
     return(
       <div>
       <div className="row">
