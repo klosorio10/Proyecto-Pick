@@ -37,13 +37,16 @@ var Comparaciones = mongoose.model('pick', esquema);
 
  exports.Comparaciones = Comparaciones;
 
-  Comparaciones.exports.list = (req, res) => {
+  Comparaciones.exports.list = (req, res) => { // podrian usar simplemente un router y listo
 	   getComparaciones({},
 		 function (comparaciones) {
 			 res.json(comparaciones);
 		 })
   }
 
+// toda el API esta comentada, pero solo usan el get comparaciones, y de hecho, no le pasan query. 
+// asi no estuviera comentada, no es un uso apropiado de express y el routing. Esas cosas no se dejan en el exports.
+  
 // function (req, res) {
 // 	getTweets({},
 // 		function (tweets) {

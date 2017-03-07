@@ -2,8 +2,8 @@
 import React, {Component} from 'react';
 import Buscador from './buscador';
 import VideoPlayer from './VideoPlayer';
-import Comentarios from './comentarios/comentarios';
-import Comparaciones from './productos/comparaciones';
+import Comentarios from './comentarios/comentarios'; // no se usa este componente
+import Comparaciones from './productos/comparaciones'; // no se usa este componente
 import YTSearch from 'youtube-api-search';
 import axios from 'axios';
 
@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
+    this.state = { // no es claro para que son estos videos
       videos :[],
       video1:null,
       video2:null,
@@ -37,10 +37,10 @@ class App extends Component {
     });
   }
 
-  render() {
+  render() { // en este render meten el buscador y 5 players. Por qué?
     return(
       <div>
-        <Buscador buscarVideoYoutube={this.buscarVideoYoutube.bind(this)} />
+        <Buscador buscarVideoYoutube={this.buscarVideoYoutube.bind(this)} /> 
         <div className="row margen">
           <VideoPlayer className="col-md-2" video={this.state.video1}/>
           <VideoPlayer className="col-md-2" video={this.state.video2}/>

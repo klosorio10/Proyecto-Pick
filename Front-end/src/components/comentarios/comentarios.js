@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Comentario from './comentario';
 
-class Comentarios extends Component{
+class Comentarios extends Component{ // este es  el componente que hizo Fabio la vez pasada, y no lo integran al app.js o a la logica general de uso
 
   constructor(props){
     super(props);

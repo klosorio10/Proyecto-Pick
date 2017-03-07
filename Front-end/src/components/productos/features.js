@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 
-class Features extends Component {
-
+class Features extends Component { // este componente es usado en Producto, pero no es obvio que representa.
   constructor(props){
     super(props);
 
     this.state={
-      featu1:'',
+      featu1:'', // qué van a hacer con esta lista de variables dentro del estado
       valor1:'',
       featu2:'',
       valor2:'',
