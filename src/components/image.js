@@ -8,13 +8,18 @@ class Image extends Component {
     };
   }
 
+  selected(){
+      var producto = this.props.producto;
+      this.props.callFather(producto);
+  }
+
 
   render() {
       if(this.props.producto){
           return (
               <div>
                   <p> {this.props.producto.name} </p>
-                  <input type="image" src={this.props.producto.thumbnailImage} onClick={console.log('me hizo un click!')}/>
+                  <input type="image" src={this.props.producto.thumbnailImage} onClick={()=> this.selected()}/>
               </div>
           );
       }else {

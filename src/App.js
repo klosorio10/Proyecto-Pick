@@ -76,16 +76,38 @@ class App extends Component {
                 </div>
             );
         }
-        return (<div></div>);
     }
 
     showOptions(){
         if (this.state.selectedA === null && this.state.selectedB === null) {
             return (
-                <div>paso por aca</div>
+                <div className="row">
+                    <div className="col-md-2"></div>
+                    <div className="col-md-8">
+                        {this.state.data.map(image => {
+                            return (
+                                <div className="producto">
+                                    <Image producto={image} callFather={(producto)=> this.childChanged(producto)}/>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
             );
         }
-        return (<div></div>);
+        return (<div>Comparar</div>);
+    }
+
+    childChanged(producto){
+        if(this.state.selectedA === nul){
+            this.setState({
+                selectedA:producto
+            })
+        }else{
+            this.setState({
+                selectedB:producto
+            })
+        }
     }
 
 
@@ -116,18 +138,6 @@ class App extends Component {
 
                 <p>{this.showInstructions()}</p>
                 <p>{this.showOptions()}</p>
-                <div className="row">
-                    <div className="col-md-2"></div>
-                    <div className="col-md-8">
-                        {this.state.data.map(image => {
-                            return (
-                                <div className="producto">
-                                    <Image producto={image}/>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
 
                 <div className="col-md-2"></div>
                 <div className="col-md-4">
