@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Image from './components/image';
+import Features from './components/features';
+import VideoPlayer from './components/videoPlayer';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import YTSearch from 'youtube-api-search';
@@ -52,8 +54,7 @@ class App extends Component {
     buscarVideoYoutubeA(term) {
         YTSearch({key: API_KEY, term: term}, (videos) => {
             this.setState({
-                videos: videos,
-                selectedVideo: videos[0]
+                videosA: videos[0]
             });
         });
     }
@@ -61,8 +62,7 @@ class App extends Component {
     buscarVideoYoutubeB(term) {
         YTSearch({key: API_KEY, term: term}, (videos) => {
             this.setState({
-                videos: videos,
-                selectedVideo: videos[0]
+                videosB: videos[0]
             });
         });
     }
@@ -72,7 +72,6 @@ class App extends Component {
         if (this.state.selected == true) {
             return (
                 <div className="instruction">
-                    <br></br>
                     <h3>Selecciona los dos objetos que vas a comparar </h3>
                 </div>
             );
@@ -81,29 +80,9 @@ class App extends Component {
     }
 
     showOptions(){
-        if (this.state.selectedA && this.state.selectedB != null) {
+        if (this.state.selectedA === null && this.state.selectedB === null) {
             return (
-                <div className="row">
-                    <div className="col-md-2"></div>
-                    <div className="col-md-8">
-                        {this.state.data.map(image => {
-                            return (
-                                <div className="producto">
-                                    <Image producto={image}/>
-                                </div>
-                            );
-                        })}
-                    </div>
-                    <div className="col-md-2">
-                        {this.state.brands.map(brand => {
-                            return (
-                                <div>
-                                    <p>Marca: {brand}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
+                <div>paso por aca</div>
             );
         }
         return (<div></div>);
@@ -134,8 +113,33 @@ class App extends Component {
                     </div>
                 </div>
                 <br></br>
+
                 <p>{this.showInstructions()}</p>
-                {this.showOptions()}
+                <p>{this.showOptions()}</p>
+                <div className="row">
+                    <div className="col-md-2"></div>
+                    <div className="col-md-8">
+                        {this.state.data.map(image => {
+                            return (
+                                <div className="producto">
+                                    <Image producto={image}/>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                <div className="col-md-2"></div>
+                <div className="col-md-4">
+                    <Features/>
+                    <VideoPlayer/>
+                </div>
+                <div className="col-md-4">
+                    <Features/>
+                    <VideoPlayer/>
+                </div>
+                <div className="col-md-2"></div>
+
             </div>
         );
     }
