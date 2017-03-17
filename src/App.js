@@ -98,7 +98,7 @@ class App extends Component {
                 </div>
             );
         }
-        return (<div><h2>Comparar</h2></div>);
+        return (<div><h2 className="center">Comparar</h2></div>);
     }
 
     childChanged(producto){
