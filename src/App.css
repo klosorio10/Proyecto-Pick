@@ -19,10 +19,20 @@
 }
 
 .producto{
-  width: 200px;
-  height: 150px;
-  padding: 10px;
+  width: 250px;
+  height: 200px;
+  padding: 15px;
+  text-align: center;
   float: left;
+  border-bottom: groove;
+  border-bottom-color: dimgray;
+}
+
+.instruction{
+  background-color: darkgrey;
+  color:white;
+  height: 50px;
+  text-align: center;
 }
 
 .fav{

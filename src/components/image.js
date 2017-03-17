@@ -14,7 +14,7 @@ class Image extends Component {
           return (
               <div>
                   <p> {this.props.producto.name} </p>
-                  <img src={this.props.producto.thumbnailImage} />
+                  <input type="image" src={this.props.producto.thumbnailImage} onClick={console.log('me hizo un click!')}/>
               </div>
           );
       }else {
