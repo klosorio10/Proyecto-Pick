@@ -7,6 +7,21 @@
   height: 80px;
 }
 
+.center {
+  text-align: center;
+}
+
+.comentarios{
+  padding-left: 400px;
+}
+
+.comment{
+  border: hidden;
+  border-radius: 10%;
+  width: 100%;
+  height:auto;
+}
+
 .App-header {
   background-color: #222;
   height: 150px;

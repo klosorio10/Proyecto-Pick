@@ -9,8 +9,10 @@ class  Features extends Component{
         if(this.props.detalles){
             return(
                 <div>
-                    <h6>{this.props.detalles.shortDescription}</h6>
-                    <p>{this.props.detalles.salePrice}</p>
+                    <img src={this.props.detalles.thumbnailImage} alt={this.props.detalles.name}/>
+                    <h5>Nombre: {this.props.detalles.name}</h5>
+                    <p>Descripción: {this.props.detalles.shortDescription}</p>
+                    <p>Precio: {this.props.detalles.salePrice}</p>
                 </div>
             );
         }else

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Image from './components/image';
 import Features from './components/features';
+import Comments from './components/comments';
 import VideoPlayer from './components/videoPlayer';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
@@ -20,7 +21,9 @@ class App extends Component {
             videosA: [],
             videosB: [],
             selectedA: null,
-            selectedB: null
+            selectedB: null,
+            contador:0,
+            comments:[]
         };
     }
 
@@ -34,7 +37,7 @@ class App extends Component {
                 for (var i = 0; i < response.data.items.length; i++) {
                     axios.get('/item/' + response.data.items[i].itemId)
                         .then(response => {
-                            array.push(response.data.brand);
+                            array.push(response.data);
                         })
                         .catch(function (error) {
                             console.log(error);
@@ -79,7 +82,7 @@ class App extends Component {
     }
 
     showOptions(){
-        if (this.state.selectedA === null && this.state.selectedB === null) {
+        if (this.state.contador<2) {
             return (
                 <div className="row">
                     <div className="col-md-2"></div>
@@ -95,18 +98,30 @@ class App extends Component {
                 </div>
             );
         }
-        return (<div>Comparar</div>);
+        return (<div><h2>Comparar</h2></div>);
     }
 
     childChanged(producto){
-        if(this.state.selectedA === nul){
+        if(this.state.selectedA === null){
             this.setState({
                 selectedA:producto
-            })
-        }else{
+            });
+            this.state.contador=1;
+        }else {
             this.setState({
                 selectedB:producto
-            })
+            });
+            this.state.contador=2;
+        }
+    }
+
+    comment(){
+        if(document.getElementById("comments").value !== null){
+            var text = document.getElementById("comments").value;
+            var arrayC = this.state.comments;
+            arrayC.push(text);
+            this.setState({comments:arrayC});
+            document.getElementById("comments").value = "";
         }
     }
 
@@ -140,16 +155,29 @@ class App extends Component {
                 <p>{this.showOptions()}</p>
 
                 <div className="col-md-2"></div>
-                <div className="col-md-4">
-                    <Features detalles={this.state.selectedA} />
+                <div className="col-md-4 center">
+                    <Features detalles={this.state.selectedA}/>
                     <VideoPlayer />
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 center">
                     <Features detalles={this.state.selectedB} />
                     <VideoPlayer/>
                 </div>
                 <div className="col-md-2"></div>
 
+                <br/>
+                <br/>
+                <div className="row">
+                    <div className="col-md-8 center comentarios">
+                    <input type="text" id="comments" className="form-control" placeholder="Comentanos tu experiencia" />
+                        <br/>
+                    <button className="btn btn-success btn-block" onClick={()=> this.comment()}>
+                        agregar
+                    </button>
+                        <br/>
+                    <Comments comments={this.state.comments}/>
+                    </div>
+                </div>
             </div>
         );
     }
