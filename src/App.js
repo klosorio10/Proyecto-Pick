@@ -141,11 +141,11 @@ class App extends Component {
 
                 <div className="col-md-2"></div>
                 <div className="col-md-4">
-                    <Features/>
-                    <VideoPlayer/>
+                    <Features detalles={this.state.selectedA} />
+                    <VideoPlayer />
                 </div>
                 <div className="col-md-4">
-                    <Features/>
+                    <Features detalles={this.state.selectedB} />
                     <VideoPlayer/>
                 </div>
                 <div className="col-md-2"></div>

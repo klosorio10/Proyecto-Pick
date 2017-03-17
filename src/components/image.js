@@ -10,6 +10,7 @@ class Image extends Component {
 
   selected(){
       var producto = this.props.producto;
+      console.log(producto);
       this.props.callFather(producto);
   }
 

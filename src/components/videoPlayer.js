@@ -7,7 +7,7 @@ class  VideoPlayer extends Component{
 
     render(){
             return(
-                <div>Aqui va el video</div>
+                <div>Reload</div>
             );
     }
 
