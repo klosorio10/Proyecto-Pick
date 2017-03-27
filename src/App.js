@@ -1,3 +1,4 @@
+// Recuerden el uso de use strict en los archivos de javascript. El código de la aplicación está un poco desordenado, es difícil entenderlo. Podrían modularizar más para facilitar la comprensión.
 import React, { Component } from 'react';
 import './App.css';
 import Image from './components/image';
