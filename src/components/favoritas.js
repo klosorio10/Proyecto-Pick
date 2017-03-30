@@ -9,6 +9,7 @@ class Favoritas extends Component {
   render() {
           return (
       <div>
+            {/*Falta el alt*/}
       <img src={this.props.url}/>
       </div>
     );
