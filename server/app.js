@@ -12,7 +12,7 @@ const schema = mongoose.Schema;
 const MongoClient = require('mongodb').MongoClient
     , assert = require('assert');
 const walmart = require('walmart')('nw8qw3u8ja5qhtzwkz4ex9ws');
-
+//Cuidado con las api_keys quemadas en el codigo o con subirlas al repositorio
 //hqhe9k3wq7wwhxz7xd8hqwan
 
 // Connection URL
@@ -31,6 +31,7 @@ function getComparaciones(query) {
     MongoClient.connect(url, function(err, db) {
         assert.equal(null, err);
         console.log("Connected successfully to Mongo");
+	    //Se puede usar let o const
         var comparaciones = db.collection("comparaciones");
         console.log(comparaciones);
 
@@ -76,6 +77,7 @@ app.get('/:query', function(req, res)
 {
     walmart.search(req.params["query"]).then(function(data)
     {
+	    //Se puede usar let o const
         for (var i = 0; i < data.items.length; i++) {
             console.log('- name: ' + data.items[i].name);
             console.log('- price: ' + data.items[i].salePrice);
