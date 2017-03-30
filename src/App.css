@@ -10,12 +10,14 @@
 .center {
   text-align: center;
 }
-
+/*Cuidado con este padding, cuando se agrega un comentario con mucho texto se ve extraño pues el lado izquierdo tiene muy poco texto y el derecho mucho*/
+  /*Lo mejor es lograr este espacio a la izquierda con bootstrap*/
 .comentarios{
   padding-left: 400px;
 }
 
 .comment{
+  /*No es necesario especifcar el radio del borde si este no sera mostrado*/
   border: hidden;
   border-radius: 10%;
   width: 100%;
