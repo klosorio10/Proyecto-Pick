@@ -3,9 +3,11 @@ import './App.css';
 import Image from './components/image';
 import Features from './components/features';
 import Comments from './components/comments';
+//Import innecesario
 import VideoPlayer from './components/videoPlayer';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+//Import innecesario
 import YTSearch from 'youtube-api-search';
 
 
@@ -33,6 +35,7 @@ class App extends Component {
         axios.get('/' + keyword)
             .then(response => {
                 this.setState({data: response.data.items});
+             //Se podría usar let y tambien en el for
                 var array = [];
                 for (var i = 0; i < response.data.items.length; i++) {
                     axios.get('/item/' + response.data.items[i].itemId)
@@ -41,7 +44,7 @@ class App extends Component {
                         })
                         .catch(function (error) {
                             console.log(error);
-                        })
+                        })//Falta ;
                 }
                 this.setState({brands: array});
             })
@@ -53,7 +56,7 @@ class App extends Component {
         console.log(this.state.selected);
     }
 
-
+//Función no utilizada
     buscarVideoYoutubeA(term) {
         YTSearch({key: API_KEY, term: term}, (videos) => {
             this.setState({
@@ -61,7 +64,7 @@ class App extends Component {
             });
         });
     }
-
+//Función no utilizada
     buscarVideoYoutubeB(term) {
         YTSearch({key: API_KEY, term: term}, (videos) => {
             this.setState({
@@ -153,14 +156,16 @@ class App extends Component {
 
                 <p>{this.showInstructions()}</p>
                 <p>{this.showOptions()}</p>
-
+{/*Los siguientes col-md-? no se encuentran dentro de una row */}
                 <div className="col-md-2"></div>
                 <div className="col-md-4 center">
                     <Features detalles={this.state.selectedA}/>
+{/*El componente no es utilizado*/}
                     <VideoPlayer />
                 </div>
                 <div className="col-md-4 center">
                     <Features detalles={this.state.selectedB} />
+{/*El componente no es utilizado*/}
                     <VideoPlayer/>
                 </div>
                 <div className="col-md-2"></div>
