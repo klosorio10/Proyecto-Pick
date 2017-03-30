@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import YTSearch from 'youtube-api-search';
 
-
+//deberían eliminar los import que no están usando.
 const API_KEY = 'AIzaSyD7AeJ_fi01jWanRgPibiUCgWuSFb7nFkE';
 class App extends Component {
 
