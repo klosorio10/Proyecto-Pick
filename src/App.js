@@ -9,7 +9,7 @@ import axios from 'axios';
 import YTSearch from 'youtube-api-search';
 
 
-const API_KEY = 'AIzaSyD7AeJ_fi01jWanRgPibiUCgWuSFb7nFkE';
+const API_KEY = 'YOUR_API_KEY';
 class App extends Component {
 
     constructor(props) {
