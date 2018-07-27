@@ -13,8 +13,6 @@ const MongoClient = require('mongodb').MongoClient
     , assert = require('assert');
 const walmart = require('walmart')('YOUR_API_KEY');
 
-//hqhe9k3wq7wwhxz7xd8hqwan
-
 // Connection URL
 const url = 'mongodb://admin:admin@ds119380.mlab.com:19380/pickdb';
 const esquema = new schema({
