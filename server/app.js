@@ -1,4 +1,7 @@
 // server/app.js
+
+//los datos sensibles deberían guardarse como variables de entorno en heroku, no deberían estar en el repositorio como texto plano.
+//me parece muy chevere que hayan usado la API de Walmart. pero creo que no están usando meteor.
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
